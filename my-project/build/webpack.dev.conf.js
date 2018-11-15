@@ -46,6 +46,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     new webpack.DefinePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
       'process.env': require('../config/dev.env')
     }),
     new webpack.HotModuleReplacementPlugin(),
