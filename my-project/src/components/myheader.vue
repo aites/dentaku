@@ -8,5 +8,8 @@
     <p>{{ item }} は {{ item }}円</p>
     </li>
     </ul>
+    <div id="repeat-object">
+      <button v-repeat="primitiveValues">{{$key}}{{$value}}</button>
+    </div>
   </div>
 </template>
