@@ -14,6 +14,7 @@
       </div>
       <div class="dentaku-board-otg">
         <button class="dentaku-board-button" v-on:click="clickClear()">C</button>
+        <div class="dentaku-board-button"></div>
         <button class="dentaku-board-button" v-on:click="clickOperator('+')">+</button>
         <button class="dentaku-board-button" v-on:click="clickOperator('-')">-</button>
         <button class="dentaku-board-button" v-on:click="clickOperator('*')">*</button>

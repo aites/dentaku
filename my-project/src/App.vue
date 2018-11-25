@@ -1,15 +1,5 @@
 <template>
   <div>
-    <myheader></myheader>
-    <p v-if="msg.length > 0">
-      {{msg}}
-      {{data}}
-    </p>
-    <p v-else>
-      no text
-    </p>
-    <input type="text" v-model="msg">
-    <button @click="clear()">clear</button>
     <dentaku></dentaku>
   </div>
 </template>
