@@ -103,7 +103,7 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-button {
+.dentaku-board-button {
   width: 32px;
   height: 32px;
   margin: 4px;
