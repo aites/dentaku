@@ -27,16 +27,6 @@
 
 <script>
 export default {
-//   el: '#result',
-//   question: '',
-//   answer: 'I cannot give you an answer until you ask a question!',
-//   watch: {
-//     // この関数は question が変わるごとに実行されます。
-//     question: function (newQuestion, oldQuestion) {
-//       this.answer = 'Waiting for you to stop typing...'
-//       this.debouncedGetAnswer()
-//     }
-//   }
   data () {
     return {
       counter: 0,
@@ -69,13 +59,12 @@ export default {
     },
     clickResult: function () {
       if (this.operator !== '') {
-        if(this.formula === '') {
-          this.formula = this.operator + this.counter;
+        if (this.formula === '') {
+          this.formula = this.operator + this.counter
         }
-        if(this.equal !== '=') {
+        if (this.equal !== '=') {
           this.counter = eval(this.beforeNum + this.formula)
-        }
-        else {
+        } else {
           this.counter = eval(this.counter + this.formula)
         }
         this.equal = '='
