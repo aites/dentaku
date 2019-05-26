@@ -4,7 +4,10 @@
       電卓です
     </p>
     <div>
-      計算結果:<span id="result">{{counter}}</span>
+      計算：<span id="calc">{{calc}}</span>
+    </div>
+    <div>
+      結果：<span id="result">{{counter}}</span>
     </div>
     <div class="dentaku-board">
       <div class="dentaku-board-number">
@@ -43,7 +46,8 @@ export default {
       operator: '',
       beforeNum: 0,
       equal: '',
-      formula: ''
+      formula: '',
+      calc: ''
     }
   },
   methods: {
@@ -59,33 +63,41 @@ export default {
         } else if (String(this.counter) === '') {
           item = '0.'
         }
+      } else if (Number(this.counter) === 0) {
+        this.counter = ''
+        if (this.calc.length < 2) {
+          this.calc = ''
+        }
       }
       this.counter += String(item)
+      this.calc += String(item)
     },
     clickOperator: function (operator) {
       this.operator = operator
       this.beforeNum = this.counter
       this.counter = 0
+      this.calc += String(operator)
     },
     clickResult: function () {
       if (this.operator !== '') {
-        if(this.formula === '') {
-          this.formula = this.operator + this.counter;
+        if (this.formula === '') {
+          this.formula = this.operator + this.counter
         }
-        if(this.equal !== '=') {
-          this.counter = eval(this.beforeNum + this.formula)
-        }
-        else {
-          this.counter = eval(this.counter + this.formula)
+        if (this.equal !== '=') {
+          this.counter = eval(this.beforeNum + this.formula)  // eslint-disable-line
+        } else {
+          this.counter = eval(this.counter + this.formula)  // eslint-disable-line
         }
         this.equal = '='
       }
+      this.calc += String('=')
     },
     clickClear: function () {
       this.counter = 0
       this.operator = ''
       this.equal = ''
       this.formula = ''
+      this.calc = ''
     }
   }
 }
