@@ -30,16 +30,6 @@
 
 <script>
 export default {
-//   el: '#result',
-//   question: '',
-//   answer: 'I cannot give you an answer until you ask a question!',
-//   watch: {
-//     // この関数は question が変わるごとに実行されます。
-//     question: function (newQuestion, oldQuestion) {
-//       this.answer = 'Waiting for you to stop typing...'
-//       this.debouncedGetAnswer()
-//     }
-//   }
   data () {
     return {
       counter: 0,
